@@ -1,6 +1,6 @@
 
-import React from "react";
-import { FaStar } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaChevronUp, FaStar } from "react-icons/fa";
 import { FaRegCircleDot } from "react-icons/fa6";
 import { MdOutlineMenuBook } from "react-icons/md";
 import { RECO_IMG } from "./utils/constant";
@@ -11,6 +11,17 @@ import { IoIosArrowDown } from "react-icons/io";
 
 const Accoridan =({newRes})=>{
 
+    const [accordian, setAccordian] = useState(false);
+
+    const handleAccordian =()=>{
+        setAccordian(!accordian);
+
+        // if(accordian){
+        //     document.getElementsByClassName("accordian-data").
+
+        // }
+    }
+
 
     
     
@@ -19,12 +30,9 @@ const Accoridan =({newRes})=>{
             {/* Accodian Header */}
 
             
-            {/* Accordian data */}
-             
 
 
-
-            <div className="accordian bg-red-600    ">
+            <div className="accordian bg-red-600   " onClick={handleAccordian}>
 
             
                 <div className="header-left">
@@ -33,14 +41,27 @@ const Accoridan =({newRes})=>{
                 </div>
 
                 <div className="header-right">
-                    <h3><IoIosArrowDown /></h3>
+                   { !accordian?
+                        <h4><IoIosArrowDown /></h4>
+                    :
+                        <h4><FaChevronUp/></h4>
+                   }
+
+                    
+                    
                 </div>
 
 
 
-            </div>
-            {
 
+            </div>
+
+            
+            {/* Accordian data */}
+            
+
+            {
+           !accordian ?null : 
                 newRes.card?.card?.itemCards?.map(item => (
 
                     <div className=" res-menu" key={item.card.info.id}>
@@ -49,7 +70,7 @@ const Accoridan =({newRes})=>{
 
                             <h3>{item.card.info.name}</h3>
                             <h3>₹ {item.card.info.price / 100 || item.card.info.defaultPrice / 100}</h3>
-                            <h3><FaStar className="star2" /> {item.card.info.ratings.aggregatedRating.rating}</h3>
+                            <div className="div-rating"><FaStar className="star2" /> <h3>{item.card.info.ratings.aggregatedRating.rating}</h3></div>
                             <h4 className="description">{item.card?.info?.description?.split('(' || '&')[0].trim()};</h4>
                         </div>
                         <div className="img-div">
@@ -61,7 +82,9 @@ const Accoridan =({newRes})=>{
 
                 ))
             }
+            
 
+        
 
             
         </div>
