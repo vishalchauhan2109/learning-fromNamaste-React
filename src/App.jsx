@@ -7,7 +7,7 @@ import About from "./Components/About";
 import Contact from "./Contact";
 import Error from "./Error";
 import Cart from "./Cart";
-import RestaurentData from "./restaurentData";
+import RestaurentData from "./RestaurentData";
 // import OnlineStatus from "./Components/utils/OnlineStatus";
 //
 const AppLayout = () => {

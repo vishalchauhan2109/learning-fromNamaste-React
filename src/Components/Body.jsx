@@ -21,8 +21,8 @@ const Body = () => {
 
     const fetchData = async () => {
 
-        const data = await fetch('https://corsproxy.io/https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0687893&lng=72.87026469999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING')
-        // console.log(data);
+        const data = await fetch('https://corsproxy.io/https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.4948284&lng=77.3285082&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING')
+        console.log(data);
         const json = await data.json();
         // console.log(json)
 
@@ -53,7 +53,7 @@ const Body = () => {
 
 
                 <div className="search">
-                    <button className='filter-top-rated' onClick={() => {
+                    <button className= ' filter-top-rated' onClick={() => {
 
                         const setdata = newresData.filter(
                             (res) => res.info.avgRating > 4.3
@@ -71,8 +71,7 @@ const Body = () => {
                         />
                         <FcSearch className="search-icon" onClick={() => {
                             const newfilterlist = newresData.filter(
-                                (res) =>
-                                    res.info.name.toLowerCase().includes(addfilter.toLowerCase())
+                                (res) =>res.info.name.toLowerCase().includes(addfilter.toLowerCase())
                             )
                             setCopynewresdata(newfilterlist)
 

@@ -4,7 +4,7 @@ const Header = () => {
 
     const[btnstate,setBtnstate] = useState("login");
     return (
-        <div className='Navbar'>
+        <div className='Navbar bg-green-600 '>
 
             <div className="Nav-logo">
                 <p className="logo">GOOD-FOOD</p>

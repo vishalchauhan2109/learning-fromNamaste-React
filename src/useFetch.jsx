@@ -19,12 +19,12 @@ export const useFetch = (resId) => {
     }, []);
     const fetchdata = async () => {
 
-        const data = await fetch(`https://corsproxy.io/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.4948284&lng=77.3285082&restaurantId=45177&catalog_qa=undefined&submitAction=ENTER`)
-        console.log(data);   
+        const data = await fetch(`https://corsproxy.io/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.4948284&lng=77.3285082&restaurantId=${resId}&catalog_qa=undefined&submitAction=ENTER`)
+          
         const json = await data.json();
         console.log("hii");
 
-        // console.log(json);
+        console.log(json);
 
         setResval(json)
 
