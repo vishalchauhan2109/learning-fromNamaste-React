@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import UserContext from "./utils/UserContext";
 const Header = () => {
 
+    const data = useContext(UserContext);
+    console.log(data)
+
     const[btnstate,setBtnstate] = useState("login");
+
+    function handlebtn(){
+        setBtnstate(data.loggedInUser)
+    }
     return (
-        <div className='Navbar bg-green-600 '>
+        <div className='Navbar-header bg-green-600 '>
 
             <div className="Nav-logo">
                 <p className="logo">GOOD-FOOD</p>
@@ -24,12 +32,7 @@ const Header = () => {
                 <li>
                     <Link className="link" to ="/cart">Cart</Link>
                 </li>
-                <button className="button" onClick={()=>{
-                       btnstate ==="login"? setBtnstate("logout"):setBtnstate("login")
-                       console.log(btnstate)
-                } 
-                }>{btnstate}
-                </button>
+                <button className="button" onClick={handlebtn}>{btnstate}</button>
             </ul>
 
             

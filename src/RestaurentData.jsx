@@ -12,6 +12,8 @@ import Accoridan from "./Components/Accordian";
 // import { resData } from "./Components/utils/data";
 
 const RestaurentData = () => {
+
+    const [showIndex,setShowIndex] = useState(null);
     const { resId } = useParams();
     console.log(resId);
 
@@ -28,7 +30,7 @@ const RestaurentData = () => {
     // console.log(resinfo.data?.cards[2]?.card?.card.info )
     
 
-    const rescards = resinfo.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards.filter(
+    const rescards = resinfo.data.cards[4]?.groupedCard?.cardGroupMap.REGULAR.cards.filter(
         (data)=>data.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
         
     )
@@ -55,17 +57,23 @@ const RestaurentData = () => {
                     <span className="offer">{resinfo.loyaltyDiscoverPresentationInfo?.freedelMessage}</span>
                 </div> */}
             </div>
-            <div className="menu-top">
-                <div className="menu-text"> <MdOutlineMenuBook className="menu-icon" /><h1>menu</h1></div>
+            <div className="menu-top"> 
+                <div className="menu-text"> <MdOutlineMenuBook className="menu-icon"/><h1>menu</h1></div>
             </div>
             
            {
-            rescards.map((newRes)=>
-            <Accoridan key={newRes.card.card.categoryId} newRes={newRes}/>)
-           }
-           
-        
+            rescards?.map((newRes,index)=>
 
+            <Accoridan key={newRes.card.card.categoryId} 
+            newRes={newRes}
+            accordian={index === showIndex ? true:false}    
+            setShowIndex = {()=>{
+                setShowIndex(null)
+                setShowIndex(index)
+            }}
+            
+            />)
+           }
         </div>
     )
 }

@@ -1,14 +1,14 @@
 @import 'tailwindcss';
 
 body{
-    background-color: rgb(173, 244, 173);
+    background-color:rgba(52, 249, 144, 0.317);
 }
-.Navbar{
+.Navbar-header{
     display: flex;
     justify-content:space-around;
     padding: 10px;
     box-shadow: 0 1px 3px -2px  ;
-    background-color:light rgb(173, 244, 173);  
+    background-color: rgba(67, 254, 142, 0.566);  
 }
 .filter-top-rated{
     min-width: 150px;
@@ -154,6 +154,7 @@ body{
 .product{
     min-width: 260px;
     max-width: 260px;
+    border-radius: 25px;
      
     height:370px;
     background-color:rgb(252, 246, 246);
@@ -168,7 +169,7 @@ body{
 }
 
 .product:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
   background-color: rgb(255, 247, 247);
   border: 1.5px solid rgb(148, 141, 141);
   border-radius: 15px;
