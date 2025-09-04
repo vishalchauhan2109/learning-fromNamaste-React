@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 // import Search from "./Filterbtn";
-import { resData } from "../Components/utils/data"
+// import { resData } from "../Components/utils/data"
 import Product from "../Components/Product"
 import Shimmar from "../Shimmar";
 import { Link } from "react-router-dom";
@@ -22,14 +22,15 @@ const Body = () => {
     const fetchData = async () => {
 
         const data = await fetch('https://corsproxy.io/https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.4948284&lng=77.3285082&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING')
-        console.log(data);
+        // console.log(data);
         const json = await data.json();
-        // console.log(json)
+        console.log(json)
 
         // 
 
         //optional Chaining
         setNewresdata(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        console.log(setNewresdata)
         setCopynewresdata(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         
     }

@@ -1,12 +1,10 @@
 import React from "react"
 
-const Contact = ()=>{
+const Contact = () => {
 
 
-    return(
-        <div>
-            <h1>Contact is here</h1>
-        </div>
+    return (
+       <h1>contact</h1>
     )
 }
 export default Contact

@@ -9,18 +9,25 @@ import Error from "./Error";
 import Cart from "./Cart";
 import RestaurentData from "./RestaurentData";
 import UserContext from "./Components/utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./Components/utils/Appstore";
 // import OnlineStatus from "./Components/utils/OnlineStatus";
 //
 const AppLayout = () => {
     return (
-        // CONTEXT API  ---> UserContext.provider se UserContext wala mai jo loggedin user hai uski value mai change kar sktye hain aaise hi value dekr jaise niche di hai
-        //  jitne ko wrap kroge utne mai hi change hoga isse 
+       
+        <Provider store={appStore}>        
+
+          {/* CONTEXT API  ---> UserContext.provider se UserContext wala mai jo loggedin user hai uski value mai change kar sktye hain aaise hi value dekr jaise niche di hai
+          jitne ko wrap kroge utne mai hi change hoga isse  */}
         <UserContext.Provider value={{ loggedInUser: "chauhanji" }}>
             <div className="app">
                 <Header />
                 <Outlet />
             </div>
         </UserContext.Provider>
+        </Provider>
+
 
 
     )

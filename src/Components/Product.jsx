@@ -5,7 +5,7 @@ import { PRO_IMG } from "./utils/constant";
 const Product = ({resData}) => {
     // const  = props;
     
-    const{cloudinaryImageId,name,avgRating,deliveryTime,cuisines,locality} = resData?.info;
+    const{cloudinaryImageId,name,avgRating,sla,cuisines,locality} = resData?.info;
     
     return (
         <div className="product">
@@ -17,7 +17,7 @@ const Product = ({resData}) => {
                 <div className="ratings">{avgRating}<FaStar className="star" /></div>
             </div>
             <p className="food-item">{cuisines.join(" ,")}</p>
-            <p className="time">{deliveryTime}min</p>
+            <p className="time">{sla.deliveryTime}min</p>
             <p className="time">{locality}</p>
 
         </div>
