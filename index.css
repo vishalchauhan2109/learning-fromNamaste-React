@@ -943,3 +943,74 @@ html {
     align-items: center;
   }
 }
+
+/* Global Reset & Fonts */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body, html {
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+/* Container & Background */
+.about-page {
+  background-color: #31fdbcc9; /* Very light parrot green tint */
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+/* Header */
+.about-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.about-header h1 {
+  font-size: 2rem;
+  color: #3a4246; /* Moderately soft parrot green */
+}
+
+/* Content Sections */
+.about-content,
+.about-team {
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.about-content p,
+.about-team p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Subheading */
+.about-team h2 {
+  margin-bottom: 1rem;
+  color: #6ba32d; /* Slightly darker green for headings */
+}
+
+/* Footer */
+.about-footer {
+  text-align: center;
+  margin-top: 2rem;
+}
+.about-footer p {
+  color: #547a1d; /* Deeper green for contrast */
+  font-style: italic;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .about-content,
+  .about-team {
+    padding: 1rem;
+  }
+  .about-header h1 {
+    font-size: 1.75rem;
+  }
+}
