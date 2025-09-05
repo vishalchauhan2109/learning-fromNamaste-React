@@ -2,14 +2,19 @@
 
 body {
     background-color: rgba(52, 249, 144, 0.317);
+
 }
 
+
 .Navbar-header {
+    width: 100%;
+    position: -webkit-sticky;
+
     display: flex;
     justify-content: space-around;
     padding: 10px;
     box-shadow: 0 1px 3px -2px;
-    background-color: rgba(67, 254, 142, 0.566);
+    background-color: rgba(26, 244, 113, 0.352);
 }
 
 .filter-top-rated {
@@ -112,9 +117,10 @@ body {
     height: 36px;
     border-radius: 18px;
     border: 1px solid black;
-    background-color: lightblue;
-    color: #030303;
+    background-color: rgb(82, 85, 86);
+    color: hsl(0, 33%, 98%);
     margin-right: 30px;
+    margin-bottom: 20px;
 }
 
 .body {
@@ -534,6 +540,12 @@ h3 {
     /* transform: translateX(-50%); */
 }
 
+.add-btn:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+
+}
+
 .img-div {
 
     position: relative;
@@ -561,17 +573,20 @@ h3 {
     justify-content: space-between;
 }
 
-.overlay{
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(5px); /* blur background behind overlay */
-  -webkit-backdrop-filter: blur(5px);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+    /* blur background behind overlay */
+    -webkit-backdrop-filter: blur(5px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
 }
 
 .online {
@@ -595,9 +610,15 @@ h3 {
     border: 1px solid grey;
     padding: 2% 10%;
     border-radius: 9px;
+    margin: 30px 0px;
     text-shadow: #000;
     color: rgb(247, 253, 247);
     background-color: rgba(48, 226, 167, 0.879);
+}
+
+.img-cart {
+    height: 80px;
+    width: 80px;
 }
 
 
@@ -619,14 +640,17 @@ h3 {
     min-height: 100vh;
     padding: 10% 10%;
     margin-top: 10%;
-    background-color: aliceblue;
+    background-color: rgb(232, 241, 248);
 
 }
 
 .top-cart {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
+    align-items: center;
     margin-bottom: 10vh;
+    font-size: 50px;
 }
 
 .checkbox {
@@ -640,7 +664,7 @@ h3 {
     align-items: flex-start;
     border: 1px solid rgb(173, 172, 172);
     padding: 10px;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 
 }
 
@@ -652,15 +676,27 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    border: 1px solid grey;
-    margin-left: 10px;
-    margin-right: 10px;
+    border: 2px solid grey;
+    height: 30px;
+
 }
 
 .cart-list {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10%;
+    margin-bottom: 20px;
+    background-color: rgba(247, 187, 37, 0.952);
+    border-radius: 5px;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+    align-items: center;
+}
+
+.cart-name {
+    width: 30%;
 }
 
 .item-total {
@@ -705,9 +741,9 @@ btns {
     border-radius: 8px;
 }
 
-.display-hidden{
+/* .display-hidden{
     display: flex;
-}
+} */
 
 .conform-main {
     background: rgba(255, 255, 255, 0.3);
@@ -717,7 +753,7 @@ btns {
     -webkit-backdrop-filter: blur(8px);
     /* Safari fallback */
     z-index: 1000;
-    /* display: none; */
+    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -729,4 +765,181 @@ btns {
 
 .conform-btn {
     width: 80px;
+}
+
+/* Basic Reset & Typography */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Layout */
+.page {
+    background: #f4f4f4;
+    min-height: 100vh;
+}
+
+/* .header {
+    background: #fff;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+} */
+
+/* .logo {
+    background: #ff5722;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-right: 1rem;
+} */
+
+.main {
+    max-width: 500px;
+    margin-left: 25%;
+    /* margin:  2rem auto; */
+    padding: 1rem;
+}
+
+/* Success Message */
+.success {
+    background: #dff0d8;
+    color: #3c763d;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Form Styles */
+.contact-form {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 1rem;
+}
+
+.contact-form select {
+    background: #fff;
+}
+
+.contact-form button {
+    padding: 0.75rem;
+    background: #ff5722;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: #e64a19;
+}
+
+/* Error State */
+.error {
+    border-color: #e74c3c !important;
+}
+
+.error-text {
+    color: #e74c3c;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .main {
+        margin: 1rem;
+    }
+}
+
+/* Footer.css */
+.footer {
+  background-color: #58faa7a9; /* Light greenish background */
+  color: #2a5d3f;            /* Darker green text for contrast */
+  padding: 2rem 1rem 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.95rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.footer-about h3 {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links,
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.footer-links a {
+  color: #2a5d3f;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-links a:hover {
+  color: #1b3a26;
+}
+
+.footer-contact a {
+  color: #2a5d3f;
+  text-decoration: none;
+}
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #5af9a5;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  color: #1b3a26;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-links,
+  .footer-contact {
+    align-items: center;
+  }
 }

@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 // import Search from "./Filterbtn";
-// import { resData } from "../Components/utils/data"
+// import { resData } from "../Components/utils/data    "
 import Product from "../Components/Product"
 import Shimmar from "../Shimmar";
 import { Link } from "react-router-dom";
 import { FcSearch } from "react-icons/fc";
 import useOnlinestatus from "./utils/useOnlinestatus";
 import OnlineStatus from "./utils/OnlineStatus";
-// import Filterbtn from "./Filterbtn";
 
 
 const Body = () => {
@@ -91,6 +90,7 @@ const Body = () => {
                             <Link className="link" key={items.info.id} to={/restaurent/+items.info.id}>
                                
                                 <Product resData={items} key={items.info.id} />
+            
 
                             </Link>
                         ))

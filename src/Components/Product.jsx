@@ -5,7 +5,7 @@ import { PRO_IMG } from "./utils/constant";
 const Product = ({resData}) => {
     // const  = props;
     
-    const{cloudinaryImageId,name,avgRating,sla,cuisines,locality} = resData?.info;
+    const{cloudinaryImageId,name,avgRating,sla,cuisines,locality} = resData ?.info;
     
     return (
         <div className="product">

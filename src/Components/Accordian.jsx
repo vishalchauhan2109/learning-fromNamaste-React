@@ -5,27 +5,35 @@ import { FaRegCircleDot } from "react-icons/fa6";
 import { MdOutlineMenuBook } from "react-icons/md";
 import { RECO_IMG } from "./utils/constant";
 import { IoIosArrowDown } from "react-icons/io";
+
+
+// import Conform from "./utils/Conform";
+// import ConformOrder from "./utils/Conform-order";
 import { useDispatch } from "react-redux";
-import { addItems } from "./utils/cartSlice";
 // import { useParams } from "react-router-dom";
 // import { useFetch} from "./useFetch"
+import {addItems} from './utils/cartSlice' 
 
 
-const Accoridan = ({ newRes, accordian, index, setShowIndex }) => {
+
+const Accoridan = ({ newRes, accordian,  setShowIndex }) => {
 
 
-    const[disp,setDisp] = useState(false)
+    const[disp,setDisp] = useState(null)
 
-    //we have useSelector hook for reading similarly useDispatch for dispatching
     const dispatch = useDispatch()
-    const Handlecart = (item) => {
+    const Handlecart = (item1) => {
         //dispatch an action
-        dispatch(addItems(item))
-        console.log(item)
+        dispatch(addItems(item1))
+        // console.log(item1)
     }
 
+    //we have useSelector hook for reading similarly useDispatch for dispatching
+    
+   
+
     const Conform = () =>{
-        setDisp(true)
+        setDisp()
         console.log(disp);
 
     }
@@ -83,29 +91,19 @@ const Accoridan = ({ newRes, accordian, index, setShowIndex }) => {
 
                             
                             {/* conform portion after click add btn */}
-
-                            !disp?null:{
-                             <div className="conform-main overlay ">
-                                <div className="conform">
-                                    <h4 className="add-to-cart">Add this item to your cart</h4>
-                                    <div className="btns">
-                                        <button className="conform-btn cancle">Cancle</button>
-                                        <button className="conform-btn" onClick={() => Handlecart(item)}>Add</button>
-                                    </div>
-                                </div>
-                            </div>
-}
-                           
-
+                            {/* {
+                            !disp ? null :
+                            <ConformOrder item1={item} />
+                           }
+ */}
 
                             <div className="img-div">
                                 <img className="dish-img" src={RECO_IMG + item.card.info.imageId} alt="image" />
-                                <button className="add-btn" onClick={Conform} >Add</button>
+                                <button className="add-btn" onClick={()=>Handlecart(item) }>Add</button>
                             </div>
 
                             
                         </div>
-                        
                         
 
                     ))

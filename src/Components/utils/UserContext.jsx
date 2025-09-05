@@ -1,8 +1,21 @@
-import React, { createContext } from 'react'
+import React, { createContext, useState } from 'react'
+import { data } from 'react-router-dom'
 
-const UserContext = createContext({
+export const UserContext = createContext({
     loggedInUser :"vishal"
 
 })
 
-export default UserContext
+
+
+    
+
+
+
+
+
+
+
+
+
+

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import UserContext from "./utils/UserContext";
+import {UserContext} from "./utils/UserContext";
 import { FaShoppingCart } from "react-icons/fa";
 import { useSelector } from "react-redux";
 const Header = () => {

@@ -8,9 +8,10 @@ import Contact from "./Contact";
 import Error from "./Error";
 import Cart from "./Cart";
 import RestaurentData from "./RestaurentData";
-import UserContext from "./Components/utils/UserContext";
+import {UserContext} from "./Components/utils/UserContext";
 import { Provider } from "react-redux";
 import appStore from "./Components/utils/Appstore";
+import Footer from "./Components/Footer";
 // import OnlineStatus from "./Components/utils/OnlineStatus";
 //
 const AppLayout = () => {
@@ -24,6 +25,7 @@ const AppLayout = () => {
             <div className="app">
                 <Header />
                 <Outlet />
+                <Footer/>
             </div>
         </UserContext.Provider>
         </Provider>
